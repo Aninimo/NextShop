@@ -6,7 +6,7 @@ export interface IProducts {
   }
   price: number
   quantity: number
-  title: string
+  name: string
 }
 
 export interface IProductInCart {
