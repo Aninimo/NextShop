@@ -6,7 +6,7 @@ interface IProps {
   products: IProducts[]
 }
 
-export function ProductsGrid({ products }) {
+export function ProductsGrid({ products }: IProps){
   return (
     <Grid
       templateColumns={['repeat(1, 1fr)','repeat(3,1fr)']}
