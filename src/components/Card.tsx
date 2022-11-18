@@ -23,16 +23,16 @@ export function Card({ product }: IProps){
             alignItems='center'
             textAlign='center'
             borderRadius='8px'>
-          <img 
-            src={product.image.url}
-            width='150px'/>
+            <img 
+              src={product.image.url}
+              width='150px'/>
             <h2>
               {product.name}
             </h2>
             <Badge
               fontSize='1rem'
               mt='.5rem'>
-            {displayPrice(product.price)}
+                {displayPrice(product.price)}
             </Badge>
           </Box>
         </a>
