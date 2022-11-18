@@ -20,7 +20,6 @@ interface IProduct {
       url: string
     }
     price: number
-    quantity: number
     name: string
   }
 }
