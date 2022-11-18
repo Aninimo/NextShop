@@ -108,7 +108,7 @@ export default function ProductPage({ product }: IProduct){
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const slug = context?.params?.slug
   const { data } = await client.query({
-    query: GET_PRODUCT_BY_ID,
+    query: GET_PRODUCT_BY_SLUG,
     variables: {
       slug: slug,
     },
