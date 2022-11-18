@@ -23,7 +23,7 @@ export function Header(){
           </Text>        
         </a>
       </Link>
-      <Link href="/cart" secondary>
+      <Link href='/cart'>
         <a>
           <Box
             w='1.5rem'
