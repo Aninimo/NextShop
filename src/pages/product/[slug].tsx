@@ -28,7 +28,6 @@ export default function ProductPage({ product }: IProduct){
   const router = useRouter()
   const { id } = router.query
   const isInCart = cartStore().findIndex((item) => item.product.id === product.id) >= 0
-  const [quantity, setQuantity] = useState<number>(1)
   const [addedToCart, setAddedToCart] = useState<boolean>(isInCart)
 
   const handlePurchase = (event: MouseEvent<HTMLButtonElement>): void => {
