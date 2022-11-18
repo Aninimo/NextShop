@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
           return {
             price_data: {
-              currency: "EUR",
+              currency: "BRL",
               product_data: {
                 name: product.title,
                 images: [product.image.url],
