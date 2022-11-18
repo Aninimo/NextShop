@@ -30,7 +30,7 @@ export const GET_HOMEPAGE = gql`
   }
 `
 
-export const GET_PRODUCT_BY_ID = gql`
+export const GET_PRODUCT_BY_SLUG = gql`
   ${PRODUCT_CARD}
   query ProductPageQuery($slug: String!) {
       product(where: { slug: $slug }) {
