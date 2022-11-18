@@ -3,6 +3,7 @@ import Stripe from 'stripe'
 
 import { ICart } from '../../interfaces'
 
+// @ts-ignore
 const stripe = new Stripe('sk_test_51LLB0DLGZYTsJVoIhla5KpEFAFYx7eNkiwEJMtO3LAxvrbnoiMDSimrPyMpq5iy0UdiD2VSiQtTCTaTkJny7488E00bAXOTnbT')
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
