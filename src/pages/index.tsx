@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next'
 import { GET_HOMEPAGE } from '../services/queries'
 import { client } from '../services/apollo-client'
-import { ICategory, IProducts } from '../interfaces'
+import { IProducts } from '../interfaces'
 import { ProductsGrid } from '../components/ProductsGrid.tsx'
 
 interface IProps{
