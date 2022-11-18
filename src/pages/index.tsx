@@ -8,7 +8,7 @@ interface IProps{
   products: IProducts[]
 }
 
-export default function Home({ products }){
+export default function Home({ products }: IProps){
   return(
     <>
         <section>
