@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Stripe from 'stripe'
 
-import { ICart } from '../../interfaces'
+import { ICart } from "@interfaces/interfaces"
 
 // @ts-ignore
-const stripe = new Stripe('sk_test_51LLB0DLGZYTsJVoIhla5KpEFAFYx7eNkiwEJMtO3LAxvrbnoiMDSimrPyMpq5iy0UdiD2VSiQtTCTaTkJny7488E00bAXOTnbT')
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
@@ -21,9 +21,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
           return {
             price_data: {
-              currency: "BRL",
+              currency: "EUR",
               product_data: {
-                name: product.name,
+                name: product.title,
                 images: [product.image.url],
               },
               unit_amount: product.price * 100,
@@ -46,4 +46,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.setHeader("Allow", "POST")
     res.status(405).end("Method Not Allowed")
   }
-  }
+}
