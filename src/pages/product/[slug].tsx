@@ -20,7 +20,6 @@ interface IProduct {
       url: string
     }
     price: number
-    quantity: number
     name: string
   }
 }
@@ -29,7 +28,6 @@ export default function ProductPage({ product }: IProduct){
   const router = useRouter()
   const { id } = router.query
   const isInCart = cartStore().findIndex((item) => item.product.id === product.id) >= 0
-  const [quantity, setQuantity] = useState<number>(1)
   const [addedToCart, setAddedToCart] = useState<boolean>(isInCart)
 
   const handlePurchase = (event: MouseEvent<HTMLButtonElement>): void => {
@@ -42,7 +40,6 @@ export default function ProductPage({ product }: IProduct){
         price: product.price,
         name: product.name,
       },
-      quantity: quantity,
     }
     toast.success('Product added to cart successfully!', {
     position: toast.POSITION.TOP_RIGHT
@@ -71,7 +68,6 @@ export default function ProductPage({ product }: IProduct){
           src={product.image.url}
           width='150px'/>
        <h2>{product.name}</h2>
-       <span>{quantity}x{product.quantity}</span>
         <Badge
           fontSize='1rem'
           mt='.5rem'
