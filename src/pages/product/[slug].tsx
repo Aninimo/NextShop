@@ -71,6 +71,7 @@ export default function ProductPage({ product }: IProduct){
           src={product.image.url}
           width='150px'/>
        <h2>{product.name}</h2>
+       <span>{quantity}x{product.quantity}</span>
         <Badge
           fontSize='1rem'
           mt='.5rem'
