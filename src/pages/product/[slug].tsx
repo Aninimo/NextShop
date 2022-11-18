@@ -2,13 +2,13 @@ import { useState, MouseEvent, useEffect } from 'react'
 import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
 import { Badge, Box, Button, Link } from '@chakra-ui/react'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 import { client, cartStore } from '../../services/apollo-client'
 import { displayPrice, addToCart } from '../../utils'
 import { GET_PRODUCT_BY_SLUG } from '../../services/queries'
-import { IProducts, ICart } from "../../interfaces"
+import { IProducts, ICart } from '../../interfaces'
 
 import { ProductsGrid } from '../../components/ProductsGrid'
 
@@ -40,6 +40,7 @@ export default function ProductPage({ product }: IProduct){
         price: product.price,
         name: product.name,
       },
+        quantity: quantity,
     }
     toast.success('Product added to cart successfully!', {
     position: toast.POSITION.TOP_RIGHT
