@@ -42,7 +42,6 @@ export default function ProductPage({ product }: IProduct){
         price: product.price,
         name: product.name,
       },
-      quantity: quantity,
     }
     toast.success('Product added to cart successfully!', {
     position: toast.POSITION.TOP_RIGHT
