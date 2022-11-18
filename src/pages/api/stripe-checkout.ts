@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Stripe from 'stripe'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+const stripe = new Stripe('sk_test_51LLB0DLGZYTsJVoIhla5KpEFAFYx7eNkiwEJMtO3LAxvrbnoiMDSimrPyMpq5iy0UdiD2VSiQtTCTaTkJny7488E00bAXOTnbT')
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
