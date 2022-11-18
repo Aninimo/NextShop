@@ -10,7 +10,7 @@ import { displayPrice, addToCart } from '../../utils'
 import { GET_PRODUCT_BY_SLUG } from '../../services/queries'
 import { IProducts, ICart } from "../../interfaces"
 
-import { ProductsGrid } from '../../ProductsGrid'
+import { ProductsGrid } from '../../components/ProductsGrid'
 
 interface IProduct {
   product: {
