@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Stripe from 'stripe'
 
-import { ICart } from '../interfaces'
+import { ICart } from '../../interfaces'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
