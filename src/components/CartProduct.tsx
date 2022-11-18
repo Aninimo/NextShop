@@ -13,7 +13,7 @@ interface IProps {
 }
 
 export function CartProduct({ cartItem }: IProps){
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState<number>(cartItem.quantity)
   const { product } = cartItem
 
   const handleClick = (event: SyntheticEvent<HTMLButtonElement>): void => {
@@ -44,15 +44,16 @@ export function CartProduct({ cartItem }: IProps){
         justifyContent='space-between'
         alignItems='center'
         mt='.5rem'>
-          {displayPrice(product.price)}
+    
+    {displayPrice(product.price)}
         <Button
-          value={product.id}
-          onClick={handleClick}
-          bg='red.500'
-          color='white'
-          mt='1rem'>
-           <Icon as={Trash}/> 
-        </Button>
+        value={product.id}
+        onClick={handleClick}
+        bg='red.500'
+        color='white'
+        mt='1rem'>
+         <Icon as={Trash}/> 
+      </Button>
       </Box>
     </Box>
   )
