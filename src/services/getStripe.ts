@@ -6,7 +6,7 @@ let stripePromise: Stripe
 const getStripe = async () => {
   if (!stripePromise) {
     
-    stripePromise = new loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+    stripePromise = new loadStripe('pk_test_51LLB0DLGZYTsJVoIuXgEzagUguiBtdtaG0U2MaSRiFtHLNJPvHj7ut3TUjjOBxyFZsxTsD3qlhV1Y0zsVhBQEYRM00oa5pzDU0')
   }
 
   return stripePromise
