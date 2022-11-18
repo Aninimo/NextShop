@@ -21,5 +21,5 @@ export interface IProductInCart {
 
 export interface ICart {
   product: IProductInCart
-  quantity: number
+  
 }
