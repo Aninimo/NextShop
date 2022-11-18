@@ -35,7 +35,6 @@ export default function ProductPage({ product }: IProduct){
   const handlePurchase = (event: MouseEvent<HTMLButtonElement>): void => {
     const productToAdd: ICart = {
       product: {
-        slug: product.slug,
         id: product.id,
         image: {
           url: product.image.url,
