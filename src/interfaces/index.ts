@@ -16,7 +16,7 @@ export interface IProductInCart {
     url: string
   }
   price: number
-  quantity: number
+  
 }
 
 export interface ICart {
