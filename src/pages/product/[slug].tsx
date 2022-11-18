@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
 import { client, cartStore } from '../../services/apollo-client'
-import { displayPrice, addToCart } from '../../utils'
+import { displayPrice, displayDiscount, addToCart } from '../../utils'
 import { GET_PRODUCT_BY_SLUG } from '../../services/queries'
 import { IProducts, ICart } from "../../interfaces"
 
@@ -20,6 +20,7 @@ interface IProduct {
       url: string
     }
     price: number
+    quantity: number
     name: string
   }
 }
@@ -28,11 +29,13 @@ export default function ProductPage({ product }: IProduct){
   const router = useRouter()
   const { id } = router.query
   const isInCart = cartStore().findIndex((item) => item.product.id === product.id) >= 0
+  const [quantity, setQuantity] = useState<number>(1)
   const [addedToCart, setAddedToCart] = useState<boolean>(isInCart)
 
   const handlePurchase = (event: MouseEvent<HTMLButtonElement>): void => {
     const productToAdd: ICart = {
       product: {
+        slug: product.slug,
         id: product.id,
         image: {
           url: product.image.url,
@@ -40,6 +43,7 @@ export default function ProductPage({ product }: IProduct){
         price: product.price,
         name: product.name,
       },
+      quantity: quantity,
     }
     toast.success('Product added to cart successfully!', {
     position: toast.POSITION.TOP_RIGHT
@@ -104,7 +108,7 @@ export default function ProductPage({ product }: IProduct){
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const slug = context?.params?.slug
   const { data } = await client.query({
-    query: GET_PRODUCT_BY_SLUG,
+    query: GET_PRODUCT_BY_ID,
     variables: {
       slug: slug,
     },
