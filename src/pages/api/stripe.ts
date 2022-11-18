@@ -4,7 +4,7 @@ import Stripe from 'stripe'
 import { ICart } from '../../interfaces'
 
 // @ts-ignore
-const stripe = new Stripe('sk_test_51LLB0DLGZYTsJVoIhla5KpEFAFYx7eNkiwEJMtO3LAxvrbnoiMDSimrPyMpq5iy0UdiD2VSiQtTCTaTkJny7488E00bAXOTnbT')
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
