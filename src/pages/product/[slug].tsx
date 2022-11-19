@@ -80,7 +80,7 @@ export default function ProductPage({ product }: IProduct){
         <p>{product.description}</p>
         {addedToCart ? (
         <Link 
-          href="/cart" secondary
+          href="/cart" 
           bg='purple.200'
           p='.5rem 2rem'
           borderRadius='8px'
