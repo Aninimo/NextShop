@@ -13,7 +13,7 @@ interface IProps {
 }
 
 export function CartProduct({ cartItem }: IProps){
-  const [quantity, setQuantity] = useState<number>(cartItem.quantity)
+  const [quantity, setQuantity] = useState(cartItem.quantity)
   const { product } = cartItem
 
   const handleClick = (event: SyntheticEvent<HTMLButtonElement>): void => {
