@@ -3,7 +3,8 @@ Ecommerce site built on Next.js, Hygraph CMS and Stripe.
 
 ![Screenshot_20221118-131609_1](https://user-images.githubusercontent.com/75839810/202751652-8ba2e4ed-3c24-4381-bb1e-537689076969.jpg)
 
-<a href='https://nextshop.aninimi2.repl.co/'>🔗 Link preview</a>
+## Demo
+https://next-shop-rho.vercel.app/
 
 ## 💻 Technologies used
 <ul>
