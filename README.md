@@ -11,6 +11,11 @@ https://next-shop-rho.vercel.app/
 git clone https://github.com/Aninimo/NextShop.git
 ```
 
+## Run Next dev server:
+```
+npm run
+```
+
 ## 💻 Technologies used
 <ul>
    <li>NextJs</li>
